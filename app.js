@@ -9,7 +9,7 @@ const mongosanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const hpp = require('hpp');
 const cookieparser = require('cookie-parser');
-//middlewares///
+//Start express app
 const app = express();
 
 const reviewRouter = require('./routes/reviewroutes');
