@@ -2,7 +2,7 @@ signup = async (email, password, name, passwordConfirm) => {
   try {
     const res = await axios({
       method: 'POST',
-      url: 'http://127.0.0.1:8000/api/users/signup',
+      url: '/api/users/signup',
       data: {
         email,
         password,
