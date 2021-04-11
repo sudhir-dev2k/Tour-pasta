@@ -1,0 +1,60 @@
+doctype html 
+html 
+    head
+        block head
+            meta(charset='UTF-8') 
+            meta(name='viewport' content='width=device-width, initial-scale=1.0') 
+            
+            title Natours | #{title} 
+            link(rel='stylesheet' href='/css/style.css')
+            link(rel='shortcut icon' type='image/png' href='/img/favicon.png')
+            link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,300i,700')
+        
+
+    body
+        header.header 
+            nav.nav--tours
+                a.nav__el(href='/') ALL TOURS
+            .header__logo
+                img(src='/img/logo-white.png' alt='Natours logo')
+
+            nav.nav.nav--user 
+                if user
+                    a.nav__el.nav__el--logout(href='/login' onclick='logout()') Logout
+                    a.nav__el(href='/me') 
+                        img.nav__user-img(src=`/img/users/${user.photo}` onerror="this.src='/img/users/default.jpg';")
+                        span=user.name.split(' ')[0]
+                else
+                    a.nav__el(href='/login') Log In
+                    a.nav__el.nav__el--cta(href='/signup') Sign Up
+        block content  
+            
+        .footer
+            .footer__logo
+                img(src='img/logo-green.png' alt='Natours logo')
+      
+            ul.footer__nav
+                li
+                    a(href='#') About us
+                li
+                    a(href='#') Download Apps
+                li
+                    a(href='#') Become a guide
+                li
+                     a(href='#') Careers
+                li
+                     a(href='#') Contact
+            p.footer__copyright &copy; by Sudhir Sharma. All rights reserved.
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js')
+        script(src='/js/mapbox.js')
+        script(src='/js/login.js')
+        script(src='/js/signup.js')
+        script(src='/js/logout.js')
+
+
+
+
+
+        
+              
+       
